@@ -6,9 +6,9 @@ import java.util.HashMap;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import mmpPageObjects.HomePage;
-import mmpPageObjects.LoginPage;
-import mmpPageObjects.ScheduleAppointmentPage;
+import mmpPageObjects_PatientPages.HomePage;
+import mmpPageObjects_PatientPages.LoginPage;
+import mmpPageObjects_PatientPages.ScheduleAppointmentPage;
 import mmp_Library.FrameworkLibrary;
 
  

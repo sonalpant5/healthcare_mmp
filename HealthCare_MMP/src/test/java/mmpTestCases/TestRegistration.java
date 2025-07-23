@@ -5,10 +5,10 @@ import java.util.HashMap;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import mmpPageObjects.PatientRegisStatusInAdminPage;
-import mmpPageObjects.HomePage;
-import mmpPageObjects.LoginPage;
-import mmpPageObjects.RegistrationPage;
+import mmpPageObjects_PatientPages.HomePage;
+import mmpPageObjects_PatientPages.LoginPage;
+import mmpPageObjects_PatientPages.RegistrationPage;
+import mmpPageObjects_AdminPages.PatientRegisStatusInAdminPage;
 import mmp_Library.FrameworkLibrary;
 
 public class TestRegistration extends FrameworkLibrary{
@@ -34,7 +34,7 @@ public class TestRegistration extends FrameworkLibrary{
 	PatientRegisStatusInAdminPage apr = new PatientRegisStatusInAdminPage(driver);
 	String patientName = expectedData.get("fname");
 	String ssn = expectedData.get("ssn");
-	String status = "Rejected"; // Enter status: Rejected, Accepted, Pending as per the requirement;
+	String status = "Accepted"; // Enter status: Rejected, Accepted, Pending as per the requirement;
 	String message = apr.PatientRegistrationRequest(patientName, ssn, status );
 	Assert.assertTrue(message.equalsIgnoreCase(" USER has been updated."));
 

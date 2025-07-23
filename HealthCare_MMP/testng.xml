@@ -8,7 +8,7 @@
 		<classes>
 		<!--  	<class name="mmpTestCases.TestUpdatedPersonalDetails" />
 			<class name="mmpTestCases.TestScheduleAppointment" /> 
-			<class name="mmpTestCases.TestSendMessageE2E" /> -->	
+			class name="mmpTestCases.TestSendMessageE2E" /> -->	
 			<class name="mmpTestCases.TestRegistration" />		
 			
 		</classes>

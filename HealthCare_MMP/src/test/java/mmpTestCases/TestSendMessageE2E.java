@@ -1,15 +1,21 @@
 package mmpTestCases;
 
+import java.time.Duration;
 import java.util.HashMap;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import mmpPageObjects.HomePage;
-import mmpPageObjects.LoginPage;
-import mmpPageObjects.MessageRecieveOnAdminPage;
-import mmpPageObjects.PersonalDetailPage;
-import mmpPageObjects.SendMessageToAdminPage;
+import mmpPageObjects_AdminPages.RecieveMessageOnAdminPage;
+import mmpPageObjects_PatientPages.HomePage;
+import mmpPageObjects_PatientPages.LoginPage;
+import mmpPageObjects_PatientPages.PersonalDetailPage;
+import mmpPageObjects_PatientPages.SendMessageToAdminPage;
 import mmp_Library.FrameworkLibrary;
 import mmp_utilities.RandomDataUtils;
 
@@ -45,13 +51,17 @@ public class TestSendMessageE2E extends FrameworkLibrary {
 		launchApplication(prop.getProperty("admin_url"));
 		hpage = lPage.loginValidUser(prop.getProperty("admin_username"), prop.getProperty("admin_password"));	 
 		hpage.navigateToAModule("Messages");
-		MessageRecieveOnAdminPage map = new MessageRecieveOnAdminPage(driver);
+		RecieveMessageOnAdminPage map = new RecieveMessageOnAdminPage(driver);
 
 		HashMap<String, String> actualData = map.getDatafromAdminMessage(expectedData.get("reason"));
 	//	String pname = expectedData.get("patient");
 		Assert.assertEquals(actualData, expectedData);
 		Thread.sleep(2000);
-		hpage.navigateToAModule("Logout");
+		WebElement element = driver.findElement(By.xpath("//span[normalize-space(text())='Logout']"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf((element)));
+		element.click();
 		
 		System.out.println("Admin account Logged out successfully");
 		

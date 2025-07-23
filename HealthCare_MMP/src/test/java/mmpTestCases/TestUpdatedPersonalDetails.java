@@ -5,9 +5,9 @@ import java.util.HashMap;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import mmpPageObjects.HomePage;
-import mmpPageObjects.LoginPage;
-import mmpPageObjects.PersonalDetailPage;
+import mmpPageObjects_PatientPages.HomePage;
+import mmpPageObjects_PatientPages.LoginPage;
+import mmpPageObjects_PatientPages.PersonalDetailPage;
 import mmp_Library.FrameworkLibrary;
 
 public class TestUpdatedPersonalDetails extends FrameworkLibrary {

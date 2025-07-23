@@ -2,6 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	
 	<groupId>HealthCare_MMP</groupId>
 	<artifactId>HealthCare_MMP</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -38,11 +39,7 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.17.0</version>
 		</dependency>
-		<dependency>
-			<groupId>org.iitwf.healthcare</groupId>
-			<artifactId>mmp</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+
 	</dependencies>
 	<!-- Surefire pluin to run Testng-->
 	<build>
