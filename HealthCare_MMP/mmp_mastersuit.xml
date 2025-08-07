@@ -6,9 +6,9 @@
 	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
-		<!--  	<class name="mmpTestCases.TestUpdatedPersonalDetails" />
+			<class name="mmpTestCases.TestUpdatedPersonalDetails" />
 			<class name="mmpTestCases.TestScheduleAppointment" /> 
-			class name="mmpTestCases.TestSendMessageE2E" /> -->	
+			<class name="mmpTestCases.TestSendMessageE2E" /> 
 			<class name="mmpTestCases.TestRegistration" />		
 			
 		</classes>
